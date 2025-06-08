@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influences Externes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Charger jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <!-- Version fixe -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.11/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Version fixe -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <!-- Charger votre script -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="content-to-export">
+        <h2 class="text-center formal-title mt-4 mb-4">Influences Externes</h2>
+        <div class="container-fluid mt-3">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped w-100">
+                    <thead>
+                        <tr>
+                            <th>Influences externes / désignation du local ou du lieu.</th>
+                            <th class="vertical-header">Température</th>
+                            <th class="vertical-header">Eau</th>
+                            <th class="vertical-header">Corps solide</th>
+                            <th class="vertical-header">Corrosion</th>
+                            <th class="vertical-header">Chocs</th>
+                            <th class="vertical-header">Vibrations</th>
+                            <th class="vertical-header">Flore</th>
+                            <th class="vertical-header">Faunes</th>
+                            <th class="vertical-header">Influences des courants vagabonds, influences
+                                électromagnétiques, électrostatiques ou ionisantes</th>
+                            <th class="vertical-header">Rayonnements Solaires</th>
+                            <th class="vertical-header">Compétence</th>
+                            <th class="vertical-header">Resistance du corps</th>
+                            <th class="vertical-header">Contacts</th>
+                            <th class="vertical-header">Evacuation</th>
+                            <th class="vertical-header">Matières</th>
+                            <th class="vertical-header">Matériaux de construction</th>
+                            <th class="vertical-header">Structure des bâtiments</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- Boutons pour ajouter et supprimer des lignes -->
+                                <div class="button-container">
+                                    <button class="btn btn-primary" onclick="ajouterLigne()">+</button>
+                                    <button class="btn btn-danger" onclick="supprimerLigne()">-</button>
+                                </div>
+                            </th>
+                            <th class="clickable" onclick="openModal('AA')">AA</th>
+                            <th class="clickable" onclick="openModal('AD')">AD</th>
+                            <th class="clickable" onclick="openModal('AE')">AE</th>
+                            <th class="clickable" onclick="openModal('AF')">AF</th>
+                            <th class="clickable" onclick="openModal('AG')">AG</th>
+                            <th class="clickable" onclick="openModal('AH')">AH</th>
+                            <th class="clickable" onclick="openModal('AK')">AK</th>
+                            <th class="clickable" onclick="openModal('AL')">AL</th>
+                            <th class="clickable" onclick="openModal('AM')">AM</th>
+                            <th class="clickable" onclick="openModal('AN')">AN</th>
+                            <th class="clickable" onclick="openModal('BA')">BA</th>
+                            <th class="clickable" onclick="openModal('BB')">BB</th>
+                            <th class="clickable" onclick="openModal('BC')">BC</th>
+                            <th class="clickable" onclick="openModal('BD')">BD</th>
+                            <th class="clickable" onclick="openModal('BE')">BE</th>
+                            <th class="clickable" onclick="openModal('CA')">CA</th>
+                            <th class="clickable" onclick="openModal('CB')">CB</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableau-corps">
+                        <tr>
+                            <td>
+                                <select onchange="mettreAJourLigne(this)" title="Sélectionnez une option">
+                                    <option value="">Sélectionner</option>
+                                </select>
+                            </td>
+                            <td class="detail1"></td>
+                            <td class="detail2"></td>
+                            <td class="detail3"></td>
+                            <td class="detail4"></td>
+                            <td class="detail5"></td>
+                            <td class="detail6"></td>
+                            <td class="detail7"></td>
+                            <td class="detail8"></td>
+                            <td class="detail9"></td>
+                            <td class="detail10"></td>
+                            <td class="detail11"></td>
+                            <td class="detail12"></td>
+                            <td class="detail13"></td>
+                            <td class="detail14"></td>
+                            <td class="detail15"></td>
+                            <td class="detail16"></td>
+                            <td class="detail17"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modal-title"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <!-- Contenu dynamique ici -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <h3>Informations</h3>
+            <div class="text-left">
+                <table class="table table-bordered table-sm">
+                    <tbody>
+                        <tr>
+                            <td><label for="reference">Référence:</label></td>
+                            <td><input type="text" class="form-control form-control-sm" id="reference"
+                                    placeholder="Entrez la référence ici" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="date">Date:</label></td>
+                            <td><input type="date" class="form-control form-control-sm" id="date" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="adresse">Adresse:</label></td>
+                            <td><input type="text" class="form-control form-control-sm" id="adresse"
+                                    placeholder="Entrez l'adresse ici" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Section pour les signatures -->
+            <div class="signature-section mt-4">
+                <button type="button" class="btn btn-signature-exploitant" id="signature-exploitant"
+                    onclick="openSignatureModal('exploitant')">
+                    <i class="fas fa-file-pdf"></i> Signature Exploitant
+                </button>
+                <button type="button" class="btn btn-signature-organisme" id="signature-organisme"
+                    onclick="openSignatureModal('organisme')">
+                    <i class="fas fa-file-pdf"></i> Signature Organisme
+                </button>
+                <button type="button" class="btn btn-success" id="enregistrer-pdf" onclick="saveAsPDF()">
+                    <i class="fas fa-file-pdf"></i> Enregistrer en PDF
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Boutons de signature alignés à gauche du tableau -->
+        <div class="modal fade" id="signatureModal" tabindex="-1" role="dialog" aria-labelledby="signatureModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signatureModalLabel">Signature</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <canvas id="signatureCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeSignatureModal()">Fermer</button>
+                        <button type="button" class="btn btn-primary" onclick="saveSignature()">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

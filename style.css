@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px; /* Peut être ajusté si nécessaire */
+}
+
+table {
+    margin-bottom: 20px; /* Gardez cet espacement pour le tableau */
+    width: 100%; /* Utilise toute la largeur disponible */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+    text-align: center;
+}
+
+td, th {
+    vertical-align: middle; /* Centre verticalement */
+    text-align: center; /* Centre horizontalement */
+    padding: 8px; /* Ajustez le padding si nécessaire */
+}
+
+th {
+    background-color: #f2f2f2; /* Couleur de fond pour les en-têtes */
+    text-align: center; /* Centrer le texte dans les en-têtes */
+}
+
+/* Ajustement des largeurs des colonnes */
+th:first-child, td:first-child {
+    width: 2%; /* Largeur pour la première colonne */
+}
+
+th:nth-child(10), td:nth-child(10) { /* Ajuste la colonne avec le texte long */
+    width: 25%; /* Ajustez la largeur selon vos besoins */
+    word-wrap: break-word; /* Force le texte à passer à la ligne */
+    white-space: normal; /* Permet au texte de passer à la ligne */
+}
+
+th:nth-child(11), td:nth-child(11) { /* Ajuste la colonne pour 'Rayonnements Solaires' */
+    width: 25%; /* Ajustez la largeur selon vos besoins */
+    word-wrap: break-word; /* Force le texte à passer à la ligne */
+    white-space: normal; /* Permet au texte de passer à la ligne */
+}
+
+th:not(:first-child):not(:nth-child(10)), td:not(:first-child):not(:nth-child(10)) {
+    width: 5%; /* Largeur pour les autres colonnes */
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e7e7e7;
+}
+.button-container {
+    display: contents;
+    justify-content: center; /* Centre les boutons horizontalement */
+    margin-top: 20px; /* Ajoute un espace au-dessus si nécessaire */
+}
+
+.button-container button {
+    margin: 0 10px; /* Ajoute un espace entre les boutons */
+}
+
+.vertical-header {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    vertical-align: middle; /* Centre verticalement */
+    height: 100px; /* Ajustez la hauteur si nécessaire */
+    width: 20px; /* Ajustez la largeur si nécessaire */
+}
+
+td {
+    text-align: center; /* Centrer le texte dans les cellules */
+}
+
+.formal-title {
+    color: #2c3e50; /* Couleur sobre (bleu foncé) */
+    font-weight: bold; /* Texte en gras */
+    font-size: 2.5rem; /* Taille de police appropriée */
+    border-bottom: 2px solid #bdc3c7; /* Ligne en bas pour accentuer */
+    padding-bottom: 10px; /* Espacement en bas du texte */
+}
+
+.signature-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.clickable {
+    cursor: pointer; /* Change le curseur pour la ligne */
+    padding-bottom: 18px; /* Ajoute de l'espace autour du texte */
+}
+
+.table-bordered td, .table-bordered th {
+    vertical-align: middle; /* Surcharge Bootstrap pour centrer verticalement */
+}
+
+#signature-exploitant{
+    background-color: orange;
+    border-color: #000000;
+    color: white;
+}
+
+#signature-organisme{
+    background-color:orange;
+    border-color: #000000;
+    color: white;
+}
+
+#signature-exploitant:hover{
+    background-color: #000000;
+}
+
+#signature-organisme:hover{
+    background-color: #000000;
+}
+
+#enregistrer-pdf{
+    background-color: green;
+    border-color: #000000;
+    color: white;
+}
+
+#enregistrer-pdf:hover{
+    background-color: #000000;
+}
